@@ -1,0 +1,19 @@
+hostname SmartBranch-Router
+
+VLAN 10 Employee
+VLAN 20 Guest
+VLAN 30 Server
+VLAN 99 Management
+
+Employee Gateway: 10.10.10.1
+Guest Gateway: 10.10.20.1
+Server Gateway: 10.10.30.1
+Management Gateway: 10.10.99.1
+
+DNS Server: 10.10.30.10
+
+GUEST_RESTRICT
+
+ip nat inside source list 1 interface gigabitEthernet 0/2 overload
+
+ip route 0.0.0.0 0.0.0.0 200.1.1.1
